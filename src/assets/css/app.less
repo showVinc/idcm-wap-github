@@ -1,0 +1,325 @@
+/*公共样式*/
+body{
+  background: #ecf0f4;
+}
+//鼠标经过变手
+ul{
+  li{
+    &:hover{
+      cursor:pointer
+    }
+  }
+}
+
+input{
+  margin: 0!important;
+  font-size: 14px;
+  border:none;
+}
+
+input::-webkit-input-placeholder {
+  /* placeholder颜色  */
+  color: #ccc;
+  /* placeholder字体大小  */
+  font-size: 14px;
+  /* placeholder位置  */
+}
+
+textarea::-webkit-input-placeholder{
+  /* placeholder颜色  */
+  color: #ccc;
+  /* placeholder字体大小  */
+  font-size: 14px;
+  /* placeholder位置  */
+}
+
+*,p,div,span,a,input,select{
+  padding: 0;
+  margin: 0;
+}
+li{
+  list-style: none;
+}
+
+//弹出信息toast样式
+.mint-toast {
+  max-width: 100% !important;
+  //transition: opacity .2s linear!important;
+}
+
+//弹出信息toast样式
+.mint-toast.is-placemiddle {
+  top: 20px!important;
+  width: 100% !important;
+  background: #eac076;
+  border-radius: 0 !important;
+  &.bg{
+    background: rgba(3,3,3,0.6)!important;
+  }
+
+}
+
+//底部pop样式替换
+.mint-popup-bottom {
+  width: 100%!important;
+  height: 100vh!important;
+  overflow: hidden;
+  box-sizing: border-box!important;
+  .close{
+    width: 100%;
+    height: 44px;
+    position: fixed;
+    left: 0;
+    top:0;
+    z-index: 999;
+    background: #fff;
+    img{
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
+  }
+}
+
+.mint-indexlist-nav{
+  border:none!important;
+  background: none!important;
+}
+
+//城市，品牌列表
+.mint-indexsection{
+  .mint-cell-wrapper{
+    padding: 0 20px 0 15px!important;
+  }
+}
+
+.mint-indexsection-index{
+  background-color:#ebf0f4!important;
+}
+.mint-toast {
+  max-width: 100% !important;
+  z-index: 10000!important;
+}
+
+//单选框样式更改
+.mint-radiolist{
+  .mint-radio-input:checked+.mint-radio-core:after{
+    border-color: #fff;
+    -webkit-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+  }
+  .mint-radio-input:checked + .mint-radio-core::after{
+    background: none;
+  }
+  .mint-radiolist-label{
+    display: flex;
+    align-items: center;
+    .mint-radio-core{
+      background: #ccc;
+    }
+  }
+  .mint-radio-core::after{
+    border-radius: 0;
+    border: 2px solid transparent;
+    border-left: 0;
+    border-top: 0;
+    content: " ";
+    top: 3px;
+    left: 6px;
+    position: absolute;
+    width: 4px;
+    height: 8px;
+    -webkit-transform: rotate(45deg) scale(0);
+    transform: rotate(45deg) scale(0);
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    transition: transform .2s;
+    transition: transform .2s,-webkit-transform .2s;
+  }
+  .mint-radio-input:checked + .mint-radio-core{
+    background: #333!important;
+    border-color:#333!important;
+  }
+}
+//多选择框样式更改
+
+
+.mint-checklist{
+  .mint-cell-wrapper{
+    padding:0!important;
+    background-image: none!important;
+    .mint-checkbox-label{
+      margin: 0!important;
+    }
+  }
+  .mint-checkbox-core{
+    border-radius: 0!important;
+    width: 14px!important;
+    height: 14px!important;
+  }
+  .mint-checkbox-core{
+    background-color: #fff!important;
+    border-color: #bebebe!important;
+  }
+  .mint-checkbox-input:checked + .mint-checkbox-core::after{
+    border-color: #333!important;
+  }
+  .mint-checkbox-core::after{
+    top: calc(~'50% - 5px')!important;
+    left: calc(~'50% - 3px')!important;
+  }
+}
+
+
+//select最少宽度
+select{
+  min-width: 40%;
+  min-height: 30px;
+}
+
+//弹出confirm样式
+.mint-msgbox-wrapper{
+  z-index: 10000!important;
+}
+.mint-msgbox{
+  border-radius: 10px!important;
+  width: 250px!important;
+  .mint-msgbox-cancel{
+    color: #006aff;
+  }
+  .mint-msgbox-confirm{
+    color: #006aff;
+  }
+  .mint-msgbox-message{
+    color: #333!important;
+    font-size: 12px!important;
+    line-height: 22px!important;
+  }
+}
+
+//成功的toast样式
+.bg{
+  background: rgba(3,3,3,0.6)!important;
+}
+
+//多选框样式
+.default{
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  span{
+    width: 14px;
+    height: 14px;
+    border:1px solid #bebebe;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    &.active:after{
+      content: " ";
+      border: 2px solid transparent;
+      border-color: #333!important;
+      border-left: 0;
+      border-top: 0;
+      top: 2px;
+      left: 4px;
+      position: absolute;
+      width: 4px;
+      height: 8px;
+      -webkit-transition: -webkit-transform .2s;
+      transition: -webkit-transform .2s;
+      -webkit-transform: rotate(45deg) scale(1);
+      transform: rotate(45deg) scale(1);
+    }
+  }
+}
+
+//地址弹出样式
+.mint-popup-4{
+  padding: 0!important;
+  .tit{
+    height: 44px;
+    background: #ebf0f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    p{
+      width: 50px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      color: #006aff;
+    }
+  }
+}
+
+
+//单选框样式
+.mint-radiolist{
+  .mint-cell{
+    display: inline!important;
+    .mint-cell-wrapper{
+      background-image: none!important;
+    }
+  }
+}
+.mint-radio-core {
+  background: #ecf0f4;
+  border:none!important;
+}
+
+
+//无数据时样式
+.no-data{
+  &:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    background: url('../images/no_data.png') no-repeat;
+    background-size: contain;
+    left: 50%;
+    top: 80px;
+    transform: translateX(-50%);
+  }
+}
+
+//图片放大预览
+#imageView{
+  height: calc(~'100vh + 50px')!important;
+}
+#imageView .imageBox{
+  height: calc(~'100vh + 50px')!important;
+}
+#imageView .imageBox li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(~'100vh + 50px')!important;
+  overflow: scroll!important;
+}
+
+#imageView .imageBox li img{
+  height: auto!important;
+  max-width: 80%!important;
+  margin-bottom: 100px;
+  box-sizing: border-box;
+}
+
+#imageView{
+  background: rgba(3, 3, 3, 0.95)!important;
+  z-index: 10000!important;
+}
+
+.el-upload{
+  width: 75px;
+  height: 75px;
+  box-sizing: border-box;
+  border:none;
+  img{
+    width: 100%;
+    height: 100%;
+    line-height: 0;
+  }
+}
