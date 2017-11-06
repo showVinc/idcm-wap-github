@@ -2,7 +2,7 @@
   <div class="gywm">
     <public-top :num="4"></public-top>
     <div class="gywmMain">
-      <img src="../../assets/images/home/detail/add.png">
+      <img src="../../assets/images/home/gywm.png">
       <div class="gywmWrap">
         按了熬枯受淡空间撒活动空间撒活动教案开始电话撒即可阿斯加德哈萨克杰电话萨科技大会萨科技的爱神的箭哈萨克杰电话萨科技等会撒抠脚大汉萨科技爱神的箭撒活动空间和萨科技等哈说的空间撒爱神的箭安徽省的空间撒黑科技
       </div>

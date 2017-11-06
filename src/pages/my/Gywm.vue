@@ -2,7 +2,7 @@
   <div class="gywm">
     <public-top :num="4"></public-top>
     <div class="gywmMain">
-      <img src="../../assets/images/home/detail/add.png">
+      <img src="../../assets/images/home/gywm.png">
       <div class="gywmWrap">
         <div @click="tel">客服 <p>123456 <img src="../../assets/images/home/arrow.png"></p></div>
         <div @click="detailClick">关于我们 <p><img src="../../assets/images/home/arrow.png"></p></div>

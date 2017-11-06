@@ -1,4 +1,5 @@
-Btcshow.vue<template>
+Btcshow.vue
+<template>
   <div class="cashWrap">
     <public-top :num="4"></public-top>
     <div class="selVal">
@@ -29,13 +30,14 @@ Btcshow.vue<template>
     </div>
     <div class="btcText">
       <p>充值说明：</p>
-      <p>您的比特币汇入上述地址后，需要整个比特币网络节点确认，为了快速到账，您可以向比特币网络支付少量的手续费。到账时间一般是10分钟~60分钟之间。最小充值金额是：0.0001，您的比特币地址不会经常改变，可以重复充值；如有更改，我们会尽量通过网站公告或者消息通知您。</p>
+      <p>
+        您的比特币汇入上述地址后，需要整个比特币网络节点确认，为了快速到账，您可以向比特币网络支付少量的手续费。到账时间一般是10分钟~60分钟之间。最小充值金额是：0.0001，您的比特币地址不会经常改变，可以重复充值；如有更改，我们会尽量通过网站公告或者消息通知您。</p>
     </div>
     <mt-popup v-model="isShow" position="top" class="mint-popup-2 upPop" :modal="false">
-      <p @click="popClick(1)">比特币充值 <img v-if="value=='比特币充值'" src="../../assets/images/home/detail/edit.png"></p>
-      <p @click="popClick(2)">比特币提现 <img v-if="value=='比特币提现'" src="../../assets/images/home/detail/edit.png"></p>
-      <p @click="popClick(3)">人民币充值 <img v-if="value=='人民币充值'"  src="../../assets/images/home/detail/edit.png"></p>
-      <p @click="popClick(4)">人民币提现 <img v-if="value=='人民币提现'" src="../../assets/images/home/detail/edit.png"></p>
+      <p @click="popClick(1)">比特币充值 <img v-if="value=='比特币充值'" src="../../assets/images/home/success.png"></p>
+      <p @click="popClick(2)">比特币提现 <img v-if="value=='比特币提现'" src="../../assets/images/home/success.png"></p>
+      <p @click="popClick(3)">人民币充值 <img v-if="value=='人民币充值'" src="../../assets/images/home/success.png"></p>
+      <p @click="popClick(4)">人民币提现 <img v-if="value=='人民币提现'" src="../../assets/images/home/success.png"></p>
       <p @click="popClick(5)">充值提现记录</p>
     </mt-popup>
   </div>
@@ -44,24 +46,24 @@ Btcshow.vue<template>
   export default {
     data() {
       return {
-        isShow:false,
+        isShow: false,
         value: '人民币充值'
       }
     },
     methods: {
-      popClick(index){
-        switch (index){
+      popClick(index) {
+        switch (index) {
           case 1:
             this.value = '比特币充值'
             break;
           case 2:
-            this.$router.push({name:'Btcshow'})
+            this.$router.push({name: 'Btcshow'})
             break;
           case 3:
             this.value = '人民币充值'
             break;
           case 4:
-            this.$router.push({name:'Rmbshow'})
+            this.$router.push({name: 'Rmbshow'})
             break;
           case 5:
             this.$router.push('/')
@@ -70,8 +72,8 @@ Btcshow.vue<template>
         this.isShow = false
       }
     },
-    created(){
-      switch (this.$route.params.key){
+    created() {
+      switch (this.$route.params.key) {
         case 0:
           this.value = '人民币充值'
           break;
@@ -85,7 +87,7 @@ Btcshow.vue<template>
     }
   }
 </script>
-<style lang="less" scoped>
+<style lang="less" type="text/less" scoped>
   .selVal {
     height: 50px;
     display: flex;
@@ -95,86 +97,104 @@ Btcshow.vue<template>
     box-sizing: border-box;
     font-size: 20px;
     color: #ebebeb;
-    .down{
-      img{
-        margin-left: 10px;
-      }
-    }
+
+  .down {
+    display: flex;
+    align-items: center;
+
+  img {
+    margin-left: 10px;
+    width: 9px;
+    height: 5px;
+  }
+
+  }
   }
 
   .cashWrap {
-    .rmbPrice{
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: #ebebeb;
-      font-size: 14px;
-      border-bottom: 1px solid #233b56;
-      padding-left: 15px;
-      background: #0e3048;
-      margin-bottom: 10px;
-      div{
-        width: calc(~'100% - 90px');
-      }
-    }
-    .addBank{
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: #ebebeb;
-      font-size: 14px;
-      border-bottom: 1px solid #233b56;
-      padding-left: 15px;
-      background: #0e3048;
-      position: relative;
-      font-size: 14px;
-      div{
-        display: flex;
-        align-items: center;
-        img{
-          width: 16px;
-          height: 16px;
-          margin-right: 10px;
-        }
-      }
-      .arrow{
-        width: 6px;
-        height: 11px;
-        margin-right: 15px;
-      }
-    }
-    ul {
-      padding-left: 15px;
-      background: #0e3048;
-      li {
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: #ebebeb;
-        font-size: 14px;
-        border-bottom: 1px solid #233b56;
-        div{
-          width: calc(~'100% - 90px');
-          height: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding-right: 15px;
-          box-sizing: border-box;
-          input{
-            background: none;
-            font-size: 14px;
-            height: 100%;
-            color: #ebebeb;
-          }
-        }
-      }
-    }
+
+  .rmbPrice {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ebebeb;
+    font-size: 14px;
+    border-bottom: 1px solid #233b56;
+    padding-left: 15px;
+    background: #0e3048;
+    margin-bottom: 10px;
+
+  div {
+    width: calc(~ '100% - 90px');
   }
-  .text{
+
+  }
+  .addBank {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ebebeb;
+    font-size: 14px;
+    border-bottom: 1px solid #233b56;
+    padding-left: 15px;
+    background: #0e3048;
+    position: relative;
+    font-size: 14px;
+
+  div {
+    display: flex;
+    align-items: center;
+
+  img {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+  }
+
+  }
+  .arrow {
+    width: 6px;
+    height: 11px;
+    margin-right: 15px;
+  }
+
+  }
+  ul {
+    padding-left: 15px;
+    background: #0e3048;
+
+  li {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ebebeb;
+    font-size: 14px;
+    border-bottom: 1px solid #233b56;
+
+  div {
+    width: calc(~ '100% - 90px');
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15px;
+    box-sizing: border-box;
+
+  input {
+    background: none;
+    font-size: 14px;
+    height: 100%;
+    color: #ebebeb;
+  }
+
+  }
+  }
+  }
+  }
+  .text {
     font-size: 12px;
     color: #516d81;
     width: 100%;
@@ -183,7 +203,7 @@ Btcshow.vue<template>
   }
 
   .btn {
-    width: calc(~'100% - 30px');
+    width: calc(~ '100% - 30px');
     margin: 50px auto;
     box-sizing: border-box;
     font-size: 16px;
@@ -195,27 +215,32 @@ Btcshow.vue<template>
     background: #356092;
     border-radius: 3px;
   }
-  .btcText{
+
+  .btcText {
     width: 100%;
     padding: 15px;
     box-sizing: border-box;
     font-size: 12px;
     color: #516d8e;
-    p{
-      line-height: 20px;
-    }
+
+  p {
+    line-height: 20px;
+  }
+
   }
 </style>
 <style lang="less">
   .cashWrap {
-    .el-input__inner {
-      background: none;
-      color: #ebebeb;
-      border: none;
-      padding: 0;
-      width: 130px;
-      font-size: 20px;
-    }
+
+  .el-input__inner {
+    background: none;
+    color: #ebebeb;
+    border: none;
+    padding: 0;
+    width: 130px;
+    font-size: 20px;
+  }
+
   }
 
   .el-select-dropdown__item.selected.hover {
@@ -225,28 +250,33 @@ Btcshow.vue<template>
   .el-select-dropdown__item.selected {
     background-color: #0a2638;
   }
-  ::-webkit-input-placeholder{
+
+  ::-webkit-input-placeholder {
     font-size: 20px;
   }
-  .upPop{
+
+  .upPop {
     width: 100%;
     background: #0d2638;
     font-size: 20px;
     color: #ebebeb;
-    top:100px;
-    height: calc(~'100vh - 100px');
+    top: 100px;
+    height: calc(~ '100vh - 100px');
     padding-left: 15px;
     box-sizing: border-box;
-    p{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 15px 15px 0;
-      border-top: 1px solid #233b56;
-      img{
-        width: 16px;
-        height: 11.5px;
-      }
-    }
+
+  p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px 15px 0;
+    border-top: 1px solid #233b56;
+
+  img {
+    width: 16px;
+    height: 11.5px;
+  }
+
+  }
   }
 </style>

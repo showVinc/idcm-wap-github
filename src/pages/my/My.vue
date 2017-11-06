@@ -36,37 +36,37 @@
         list:[
           {
             name:'充值提现',
-            img:require('../../assets/images/home/detail/edit.png'),
+            img:require('../../assets/images/home/cz.png'),
             val:'cz'
           },
           {
             name:'账户总览',
-            img:require('../../assets/images/home/detail/edit.png'),
+            img:require('../../assets/images/home/zhanghao.png'),
             val:'zh'
           },
           {
             name:'安全中心',
-            img:require('../../assets/images/home/detail/edit.png'),
+            img:require('../../assets/images/home/aq.png'),
             val:'aq'
           },
           {
             name:'账户管理',
-            img:require('../../assets/images/home/detail/edit.png'),
+            img:require('../../assets/images/home/zhanghu.png'),
             val:'zhgl'
           },
           {
             name:'我的公告',
-            img:require('../../assets/images/home/detail/edit.png'),
+            img:require('../../assets/images/home/gg.png'),
             val:'gg'
           },
           {
             name:'设置中心',
-            img:require('../../assets/images/home/detail/edit.png'),
+            img:require('../../assets/images/home/sz.png'),
             val:'sz'
           },
           {
             name:'关于我们',
-            img:require('../../assets/images/home/detail/edit.png'),
+            img:require('../../assets/images/home/gy.png'),
             val:'gywm'
           }
         ]

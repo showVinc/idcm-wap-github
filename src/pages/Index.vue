@@ -7,28 +7,33 @@
         <span>$7000.00</span>
       </div>
       <div class="btcTime">
-        <ul>
-          <li>30m</li>
-          <li>1h</li>
-          <li>2h</li>
-          <li>3h</li>
-          <li>4h</li>
-          <li>8h</li>
-          <li>24h</li>
-        </ul>
+        <!--<ul>-->
+          <!--<li>30m</li>-->
+          <!--<li>1h</li>-->
+          <!--<li>2h</li>-->
+          <!--<li>3h</li>-->
+          <!--<li>4h</li>-->
+          <!--<li>8h</li>-->
+          <!--<li>24h</li>-->
+        <!--</ul>-->
         <div class="homeImg">
-          <img src="../assets/images/home/watch.png">
+          <img src="../assets/images/home/homeK.jpg">
         </div>
       </div>
     </div>
     <ul class="btcList">
       <li v-for="item in list">
         <div class="listImg">
-          <img src="../assets/images/home/search.png">
+          <img src="../assets/images/home/BTC.png">
         </div>
         <div class="listMain">
           <div class="listTit">
-            BTC/USD: <span :class="{'isRose':item.isrose==2}">{{item.price}}</span>
+            BTC/USD:
+            <span :class="{'isRose':item.isrose==2}">
+            {{item.price}}
+              <img src="../assets/images/home/arrowUp.png" v-if="item.isrose==1">
+              <img src="../assets/images/home/arrowDown.png" v-if="item.isrose==2">
+            </span>
           </div>
           <div class="price">最高：{{item.price_h}} <p>最低：{{item.price_l}}</p></div>
           <div class="price">数量：{{item.number}} <p>涨幅：<span :class="{'isRose':item.isrose==2}">{{item.rose}}</span></p></div>
@@ -63,10 +68,7 @@
     }
   }
 </script>
-<style lang="less" scoped>
-
-</style>
-<style lang="less">
+<style lang="less" type="text/less" scoped>
   .btc {
     padding: 15px 25px;
     box-sizing: border-box;
@@ -99,8 +101,6 @@
         box-sizing: border-box;
         img {
           width: 100%;
-          height: 300px;
-          object-fit: cover;
         }
       }
     }
@@ -122,8 +122,13 @@
           color: #ebebeb;
           span {
             color: #7aed5a;
+
             &.isRose{
               color: #ff6939;
+            }
+            img{
+              width: 10px;
+              height: 13px;
             }
           }
         }
