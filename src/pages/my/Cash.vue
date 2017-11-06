@@ -34,30 +34,30 @@
         recharge:[
           {
             name:'人民币充值',
-            img:require('../../assets/images/home/upload.png')
+            img:require('../../assets/images/home/detail/rmb.png')
           },
           {
             name:'美元充值',
-            img:require('../../assets/images/home/upload.png')
+            img:require('../../assets/images/home/detail/dollar.png')
           },
           {
             name:'比特币充值',
-            img:require('../../assets/images/home/upload.png')
+            img:require('../../assets/images/home/detail/btc.png')
           },
         ],
         cash:[
           {
             name:'人民币提现',
-            img:require('../../assets/images/home/upload.png')
+            img:require('../../assets/images/home/detail/rmb.png')
           },
           {
             name:'美元提现',
-            img:require('../../assets/images/home/upload.png')
+            img:require('../../assets/images/home/detail/dollar.png')
 
           },
           {
             name:'比特币提现',
-            img:require('../../assets/images/home/upload.png')
+            img:require('../../assets/images/home/detail/btc.png')
           },
         ]
       }
