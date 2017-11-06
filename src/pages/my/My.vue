@@ -42,7 +42,7 @@
           {
             name: '账户总览',
             img: require('../../assets/images/home/zhanghao.png'),
-            val: 'zhanghao'
+            val: 'zhanghu'
           },
           {
             name: '安全中心',
@@ -50,9 +50,9 @@
             val: 'aq'
           },
           {
-            name: '账户管理',
+            name: '账号管理',
             img: require('../../assets/images/home/zhanghu.png'),
-            val: 'zhanghu'
+            val: 'zhanghao'
           },
           {
             name: '我的公告',
@@ -87,123 +87,128 @@
           case 'zhanghu':
             this.$router.push('/my/account')
             break;
-            case 'gg':
+          case 'gg':
             this.$router.push('/my/notice')
+            break;
+          case 'zhanghao':
+            this.$router.push('/my/number')
             break;
         }
       }
     }
   }
 </script>
-<style lang="less" scoped>
+<style lang="less" scoped type="text/less">
   .user {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 15px;
 
-  img {
-    width: 6px;
-    height: 11px;
+    img {
+      width: 6px;
+      height: 11px;
+    }
+
+    .userWrap {
+      display: flex;
+
+      img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: block;
+        margin-right: 15px;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 16px;
+        color: #ebebeb;
+
+        span {
+          font-size: 12px;
+          color: #999;
+        }
+
+      }
+    }
   }
 
-  .userWrap {
-    display: flex;
-
-  img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: block;
-    margin-right: 15px;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 16px;
-    color: #ebebeb;
-
-  span {
-    font-size: 12px;
-    color: #999;
-  }
-
-  }
-  }
-  }
   .userPrice {
     display: flex;
     background: #0e3048;
     height: 82px;
     width: 100%;
 
-  div {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #999;
-    font-size: 12px;
-    position: relative;
-    box-sizing: border-box;
+    div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #999;
+      font-size: 12px;
+      position: relative;
+      box-sizing: border-box;
 
-  &
-  :first-child {
+      &
+      :first-child {
 
-  &
-  :before {
-    content: '';
-    width: 1px;
-    height: 50px;
-    position: absolute;
-    right: 0;
-    top: calc(~ '50% - 25px');
-    background: #26405e;
+        &
+        :before {
+          content: '';
+          width: 1px;
+          height: 50px;
+          position: absolute;
+          right: 0;
+          top: calc(~ '50% - 25px');
+          background: #26405e;
+        }
+
+      }
+      span {
+        font-size: 16px;
+        color: #ebebeb;
+        margin-top: 10px;
+      }
+
+    }
   }
 
-  }
-  span {
-    font-size: 16px;
-    color: #ebebeb;
-    margin-top: 10px;
-  }
-
-  }
-  }
   .userList {
     background: #0e3048;
     display: flex;
     flex-wrap: wrap;
     margin-top: 10px;
 
-  li {
-    width: 33.33%;
-    padding: 30px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    color: #4088bb;
-    border-right: 1px solid #26405e;
-    border-bottom: 1px solid #26405e;
+    li {
+      width: 33.33%;
+      padding: 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: #4088bb;
+      border-right: 1px solid #26405e;
+      border-bottom: 1px solid #26405e;
 
-  &
-  :last-child {
-    border-bottom: none;
-  }
+      &
+      :last-child {
+        border-bottom: none;
+      }
 
-  img {
-    height: 25px;
-    display: block;
-    margin-bottom: 5px;
-  }
+      img {
+        height: 25px;
+        display: block;
+        margin-bottom: 5px;
+      }
 
-  }
+    }
   }
 </style>
 <style lang="less">

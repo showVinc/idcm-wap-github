@@ -7,15 +7,6 @@
         <span>$7000.00</span>
       </div>
       <div class="btcTime">
-        <!--<ul>-->
-          <!--<li>30m</li>-->
-          <!--<li>1h</li>-->
-          <!--<li>2h</li>-->
-          <!--<li>3h</li>-->
-          <!--<li>4h</li>-->
-          <!--<li>8h</li>-->
-          <!--<li>24h</li>-->
-        <!--</ul>-->
         <div class="homeImg">
           <img src="../assets/images/home/homeK.jpg">
         </div>

@@ -15,6 +15,7 @@ import Opinion from '@/pages/my/Opinion'
 import Account from '@/pages/my/Account'
 import User from '@/pages/my/User'
 import Notice from '@/pages/my/Notice'
+import Number from '@/pages/my/Number'
 
 Vue.use(Router)
 
@@ -94,6 +95,11 @@ export default new Router({
       path: '/my/notice',
       name: 'Notice',
       component: Notice
+    },
+    {
+      path: '/my/number',
+      name: 'Number',
+      component: Number
     }
   ]
 })
