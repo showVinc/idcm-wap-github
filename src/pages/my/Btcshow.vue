@@ -54,10 +54,10 @@
       <p>3，转出数额不能小于0.01BTC。</p>
     </div>
     <mt-popup v-model="isShow" position="top" class="mint-popup-2 upPop" :modal="false">
-      <p @click="popClick(1)">比特币充值 <img v-if="value=='比特币充值'" src="../../assets/images/home/detail/edit.png"></p>
-      <p @click="popClick(2)">比特币提现 <img v-if="value=='比特币提现'" src="../../assets/images/home/detail/edit.png"></p>
-      <p @click="popClick(3)">人民币充值 <img v-if="value=='人民币充值'"  src="../../assets/images/home/detail/edit.png"></p>
-      <p @click="popClick(4)">人民币提现 <img v-if="value=='人民币提现'" src="../../assets/images/home/detail/edit.png"></p>
+      <p @click="popClick(1)">比特币充值 <img v-if="value=='比特币充值'" src="../../assets/images/home/success.png"></p>
+      <p @click="popClick(2)">比特币提现 <img v-if="value=='比特币提现'" src="../../assets/images/home/success.png"></p>
+      <p @click="popClick(3)">人民币充值 <img v-if="value=='人民币充值'" src="../../assets/images/home/success.png"></p>
+      <p @click="popClick(4)">人民币提现 <img v-if="value=='人民币提现'" src="../../assets/images/home/success.png"></p>
       <p @click="popClick(5)">充值提现记录</p>
     </mt-popup>
   </div>
@@ -87,7 +87,7 @@
             this.$router.push({name:'Rmbshow'})
             break;
           case 5:
-            this.$router.push('/')
+            this.$router.push({name:'Btcrecord'})
             break;
         }
         this.isShow = false
@@ -95,7 +95,7 @@
     },
   }
 </script>
-<style lang="less" scoped>
+<style lang="less" type="text/less" scoped>
   .selVal {
     height: 50px;
     display: flex;
@@ -106,8 +106,12 @@
     font-size: 20px;
     color: #ebebeb;
     .down{
+      display: flex;
+      align-items: center;
       img{
         margin-left: 10px;
+        width: 9px;
+        height: 5px;
       }
     }
   }

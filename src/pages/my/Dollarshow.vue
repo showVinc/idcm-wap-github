@@ -56,7 +56,7 @@
     <mt-popup v-model="isShow" position="top" class="mint-popup-2 upPop" :modal="false">
       <p @click="popClick(1)">比特币充值 <img v-if="value=='比特币充值'" src="../../assets/images/home/detail/edit.png"></p>
       <p @click="popClick(2)">比特币提现 <img v-if="value=='比特币提现'" src="../../assets/images/home/detail/edit.png"></p>
-      <p @click="popClick(3)">人民币充值 <img v-if="value=='人民币充值'"  src="../../assets/images/home/detail/edit.png"></p>
+      <p @click="popClick(3)">人民币充值 <img v-if="value=='人民币充值'" src="../../assets/images/home/detail/edit.png"></p>
       <p @click="popClick(4)">人民币提现 <img v-if="value=='人民币提现'" src="../../assets/images/home/detail/edit.png"></p>
       <p @click="popClick(5)">充值提现记录</p>
     </mt-popup>
@@ -66,28 +66,28 @@
   export default {
     data() {
       return {
-        isShow:false,
+        isShow: false,
         value: '美元提现'
       }
     },
     methods: {
-      popClick(index){
-        switch (index){
+      popClick(index) {
+        switch (index) {
           case 1:
             this.value = '比特币充值'
-            this.$router.push({name:'Security',params:{key:2}})
+            this.$router.push({name: 'Security', params: {key: 2}})
             break;
           case 2:
-            this.$router.push({name:'Btcshow'})
+            this.$router.push({name: 'Btcshow'})
             break;
           case 3:
-            this.$router.push({name:'Security',params:{key:0}})
+            this.$router.push({name: 'Security', params: {key: 0}})
             break;
           case 4:
-            this.$router.push({name:'Rmbshow'})
+            this.$router.push({name: 'Rmbshow'})
             break;
           case 5:
-            this.$router.push('/')
+            this.$router.push({name:'Btcrecord'})
             break;
         }
         this.isShow = false
@@ -95,7 +95,7 @@
     },
   }
 </script>
-<style lang="less" scoped>
+<style lang="less" type="text/less" scoped>
   .selVal {
     height: 50px;
     display: flex;
@@ -105,42 +105,54 @@
     box-sizing: border-box;
     font-size: 20px;
     color: #ebebeb;
-    .down{
-      img{
-        margin-left: 10px;
-      }
-    }
+
+  .down {
+    display: flex;
+    align-items: center;
+
+  img {
+    margin-left: 10px;
+    width: 9px;
+    height: 5px;
+  }
+
+  }
   }
 
   .cashWrap {
-    ul {
-      padding-left: 15px;
-      background: #0e3048;
-      li {
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: #ebebeb;
-        font-size: 14px;
-        border-bottom: 1px solid #233b56;
-        div{
-          width: calc(~'100% - 90px');
-          height: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding-right: 15px;
-          box-sizing: border-box;
-          input{
-            background: none;
-            font-size: 14px;
-            height: 100%;
-            color: #ebebeb;
-          }
-        }
-      }
-    }
+
+  ul {
+    padding-left: 15px;
+    background: #0e3048;
+
+  li {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ebebeb;
+    font-size: 14px;
+    border-bottom: 1px solid #233b56;
+
+  div {
+    width: calc(~ '100% - 90px');
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15px;
+    box-sizing: border-box;
+
+  input {
+    background: none;
+    font-size: 14px;
+    height: 100%;
+    color: #ebebeb;
+  }
+
+  }
+  }
+  }
   }
 
   .btn {
@@ -155,26 +167,31 @@
     background: #356092;
     border-radius: 3px;
   }
-  .btcText{
+
+  .btcText {
     width: 80%;
     margin: 15px auto;
     font-size: 12px;
     color: #516d8e;
-    p{
-      line-height: 20px;
-    }
+
+  p {
+    line-height: 20px;
+  }
+
   }
 </style>
 <style lang="less">
   .cashWrap {
-    .el-input__inner {
-      background: none;
-      color: #ebebeb;
-      border: none;
-      padding: 0;
-      width: 130px;
-      font-size: 20px;
-    }
+
+  .el-input__inner {
+    background: none;
+    color: #ebebeb;
+    border: none;
+    padding: 0;
+    width: 130px;
+    font-size: 20px;
+  }
+
   }
 
   .el-select-dropdown__item.selected.hover {
@@ -184,25 +201,29 @@
   .el-select-dropdown__item.selected {
     background-color: #0a2638;
   }
-  .upPop{
+
+  .upPop {
     width: 100%;
     background: #0d2638;
     font-size: 20px;
     color: #ebebeb;
-    top:100px;
-    height: calc(~'100vh - 100px');
+    top: 100px;
+    height: calc(~ '100vh - 100px');
     padding-left: 15px;
     box-sizing: border-box;
-    p{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 15px 15px 0;
-      border-top: 1px solid #233b56;
-      img{
-        width: 16px;
-        height: 11.5px;
-      }
-    }
+
+  p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px 15px 0;
+    border-top: 1px solid #233b56;
+
+  img {
+    width: 16px;
+    height: 11.5px;
+  }
+
+  }
   }
 </style>

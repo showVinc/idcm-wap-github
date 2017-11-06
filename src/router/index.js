@@ -9,6 +9,18 @@ import Rmbshow from '@/pages/my/Rmbshow'
 import Gywm from '@/pages/my/Gywm'
 import Gywmdetail from '@/pages/my/Gywmdetail'
 import Security from '@/pages/my/Security'
+import Btcrecord from '@/pages/my/Btcrecord'
+import Setting from '@/pages/my/Setting'
+import Opinion from '@/pages/my/Opinion'
+import Account from '@/pages/my/Account'
+import User from '@/pages/my/User'
+import Notice from '@/pages/my/Notice'
+
+//交易
+import History from '@/pages/business/history'
+//新闻资讯
+import Message from '@/pages/message/message'
+import Detail from '@/pages/message/detail'
 
 import Login from '@/pages/login/login'         //  登录
 import Register from '@/pages/login/register'    //  注册
@@ -107,6 +119,54 @@ export default new Router({
       path: '/result',
       name: 'result',
       component: Result
+    // {
+    //   path: '/business',
+    //   name: 'Business',
+    //   component: Business
+    // },
+    {
+      path: '/business/history',
+      name: 'History',
+      component: History
+    },
+    {
+      path: '/message',
+      name: 'Message',
+      component: Message
+    },
+    {
+      path: '/message/detail',
+      name: 'Message/Deatil',
+      component: Detail},
+    {
+      path: '/my/btcrecord',
+      name: 'Btcrecord',
+      component: Btcrecord
+    },
+    {
+      path: '/my/setting',
+      name: 'Setting',
+      component: Setting
+    },
+    {
+      path: '/my/opinion',
+      name: 'Opinion',
+      component: Opinion
+    },
+    {
+      path: '/my/account',
+      name: 'Account',
+      component: Account
+    },
+    {
+      path: '/my/user',
+      name: 'User',
+      component: User
+    },
+    {
+      path: '/my/notice',
+      name: 'Notice',
+      component: Notice
     }
   ]
 })
