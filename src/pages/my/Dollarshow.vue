@@ -87,7 +87,7 @@
             this.$router.push({name: 'Rmbshow'})
             break;
           case 5:
-            this.$router.push('/')
+            this.$router.push({name:'Btcrecord'})
             break;
         }
         this.isShow = false
