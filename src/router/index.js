@@ -10,6 +10,12 @@ import Gywm from '@/pages/my/Gywm'
 import Gywmdetail from '@/pages/my/Gywmdetail'
 import Security from '@/pages/my/Security'
 
+//交易
+import History from '@/pages/business/history'
+//新闻资讯
+import Message from '@/pages/message/message'
+import Detail from '@/pages/message/detail'
+
 Vue.use(Router)
 
 export default new Router({
@@ -58,6 +64,26 @@ export default new Router({
       path: '/my/security',
       name: 'Security',
       component: Security
+    },
+    // {
+    //   path: '/business',
+    //   name: 'Business',
+    //   component: Business
+    // },
+    {
+      path: '/business/history',
+      name: 'History',
+      component: History
+    },
+    {
+      path: '/message',
+      name: 'Message',
+      component: Message
+    },
+    {
+      path: '/message/detail',
+      name: 'Message/Deatil',
+      component: Detail
     }
   ]
 })
