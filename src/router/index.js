@@ -17,6 +17,21 @@ import User from '@/pages/my/User'
 import Notice from '@/pages/my/Notice'
 import Number from '@/pages/my/Number'
 
+//交易
+import History from '@/pages/business/history'
+//新闻资讯
+import Message from '@/pages/message/message'
+import Detail from '@/pages/message/detail'
+
+import Login from '@/pages/login/login'         //  登录
+import Register from '@/pages/login/register'    //  注册
+import Findpass from '@/pages/login/findpass'    //  找回密码
+import EmailPass1 from '@/pages/login/emailpass-1'   //  邮箱找回密码第一步
+import EmailPass2 from '@/pages/login/emailpass-2'   //  邮箱找回密码 第二步
+import MobilePass1 from '@/pages/login/mobilepass-1'  //  手机找回密码 第一步
+import MobilePass2 from '@/pages/login/mobilepass-2'   //  手机找回密码 第二步
+import Result from '@/pages/login/result'     //  找回密码成功后的提示
+
 Vue.use(Router)
 
 export default new Router({
@@ -66,6 +81,64 @@ export default new Router({
       name: 'Security',
       component: Security
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
+    },
+    {
+      path: '/findpass',
+      name: 'findpass',
+      component: Findpass
+    },
+    {
+      path: '/emailpassstep1',
+      name: 'emailpassstep1',
+      component: EmailPass1
+    },
+    {
+      path: '/emailpassstep2',
+      name: 'emailpassstep2',
+      component: EmailPass2
+    },
+    {
+      path: '/mobilepassstep1',
+      name: 'mobilepassstep1',
+      component: MobilePass1
+    },
+    {
+      path: '/mobilepassstep2',
+      name: 'mobilepassstep2',
+      component: MobilePass2
+    },
+    {
+      path: '/result',
+      name: 'result',
+      component: Result
+    // {
+    //   path: '/business',
+    //   name: 'Business',
+    //   component: Business
+    // },
+    {
+      path: '/business/history',
+      name: 'History',
+      component: History
+    },
+    {
+      path: '/message',
+      name: 'Message',
+      component: Message
+    },
+    {
+      path: '/message/detail',
+      name: 'Message/Deatil',
+      component: Detail},
     {
       path: '/my/btcrecord',
       name: 'Btcrecord',

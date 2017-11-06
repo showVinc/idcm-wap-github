@@ -1,0 +1,194 @@
+/** 登录注册 样式  */
+
+.sec-login {
+  &, *, *:after, *:before {
+    box-sizing: border-box;
+  }
+
+  .logo {
+    padding: 35px 0 65px/2 0;
+    img {
+      max-width: 370px/2;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+}
+
+
+.page-list {
+  font-size: 14px;
+  .p-title {
+    font-size: 20px;
+    color: #ebebeb;
+    height: 95px / 2;
+    line-height: 95px / 2;
+    padding-left: 15px;
+    font-weight: normal;
+  }
+
+  .p-list {
+    background: #0e3048;
+    padding-left: 15px;
+    .item {
+      text-decoration: none;
+      display: block;
+      color: #ebebeb;
+      height: 177px / 4;
+      line-height: 177px / 4;
+      &:not(:last-child) {
+        border-bottom: 1px solid #233b56;
+      }
+    }
+  }
+}
+
+/*  表单公共样式  */
+.form-type-1, .form-type-2 {
+
+  .form-item {
+    input {
+      flex: 1;
+      background: transparent;
+      border: 0;
+      height: 100%;
+      color: #eaeaea;
+    }
+  }
+
+  :-ms-input-placeholder {
+    color: #516d8e;
+  }
+  ::-webkit-input-placeholder {
+    color: #516d8e;
+  }
+  :-moz-placeholder {
+    color: #516d8e;
+  }
+  ::-moz-placeholder {
+    color: #516d8e;
+  }
+}
+
+.sec-login, .page-list {
+  .btn-code {
+    width: 162px/2;
+    height: 60px/2;
+    background-color: #356092;
+    border-radius: 6px/2;
+    border: 0;
+    font-size: 14px;
+    color: #ebebeb;
+  }
+
+  .btn-blue, .btn-default {
+    border-radius: 3px;
+    height: 50px;
+    font-size: 16px;
+    color: #ebebeb;
+    width: 100%;
+    display: block;
+  }
+  .btn-blue {
+    background-color: #356092;
+    border: 0;
+  }
+
+  .btn-default {
+    background-color: transparent;
+    border: 1px solid #356092;
+  }
+
+  a.btn-blue, a.btn-default {
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+
+/** 表单样式  第一种 */
+.form-type-1 {
+  padding: 0 4%;
+
+  .form-item {
+    margin: 0 auto 20px auto;
+    height: 50px;
+    border-radius: 5px;
+    border: solid 1px #356092;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    .icon {
+      display: inline-block;
+      width: 85px/2;
+      img {
+        max-width: 100%;
+        max-height: 50px - 30px;
+      }
+    }
+  }
+
+  .check {
+    .el-checkbox__inner {
+      width: 13px;
+      height: 13px;
+      border-radius: 1px;
+      border: solid 1px #356092;
+      background: transparent;
+    }
+
+    .el-checkbox__label {
+      font-size: 12px;
+      color: #516d8e;
+    }
+  }
+
+  .link {
+    font-size: 12px;
+    color: #516d8e;
+    text-decoration: none;
+  }
+}
+
+/** 表单样式  第二种 */
+.form-type-2 {
+  .input-box {
+    background: #0e3048;
+    padding-left: 15px;
+  }
+  .form-item {
+    padding-right: 15px;
+    color: #ebebeb;
+    display: flex;
+    height: 177px / 4;
+    line-height: 177px / 4;
+    align-items: center;
+    &:not(:last-child) {
+      border-bottom: 1px solid #233b56;
+    }
+    .img-code {
+      max-height: 100%;
+      margin-right: -15px;
+    }
+  }
+  .form-label {
+    font-weight: normal;
+    // padding-right: 30px;
+    width: 95px;
+  }
+
+  .el-select .el-input__inner {
+    padding-left: 0;
+  }
+
+  .btns {
+    margin: 170px / 2 15px 0 15px;
+  }
+}
+
+
+
+
+
+
