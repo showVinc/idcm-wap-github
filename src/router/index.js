@@ -120,11 +120,12 @@ export default new Router({
       path: '/result',
       name: 'result',
       component: Result
-    // {
-    //   path: '/business',
-    //   name: 'Business',
-    //   component: Business
-    // },
+      // {
+      //   path: '/business',
+      //   name: 'Business',
+      //   component: Business
+      // },
+    },
     {
       path: '/business/history',
       name: 'History',
