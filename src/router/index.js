@@ -15,6 +15,7 @@ import Opinion from '@/pages/my/Opinion'
 import Account from '@/pages/my/Account'
 import User from '@/pages/my/User'
 import Notice from '@/pages/my/Notice'
+import Number from '@/pages/my/Number'
 
 //交易
 import History from '@/pages/business/history'
@@ -205,6 +206,11 @@ export default new Router({
       path: '/security/mobile',
       name: 'securitymobile',
       component: SecurityMobile
+    },
+    {
+      path: '/my/number',
+      name: 'Number',
+      component: Number
     }
   ]
 })
