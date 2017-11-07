@@ -17,22 +17,28 @@ input{
   margin: 0!important;
   font-size: 14px;
   border:none;
+  outline:none;
+  color: #ebebeb;
 }
-
-input::-webkit-input-placeholder {
-  /* placeholder颜色  */
-  color: #ccc;
-  /* placeholder字体大小  */
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #516d8e;
   font-size: 14px;
-  /* placeholder位置  */
 }
-
-textarea::-webkit-input-placeholder{
-  /* placeholder颜色  */
-  color: #ccc;
-  /* placeholder字体大小  */
+input:-moz-placeholder, textarea:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #516d8e;
   font-size: 14px;
-  /* placeholder位置  */
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #516d8e;
+  font-size: 14px;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #516d8e;
+  font-size: 14px;
 }
 
 *,p,div,span,a,input,select{

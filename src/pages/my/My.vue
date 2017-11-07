@@ -1,12 +1,15 @@
 <template>
   <div class="userWrap">
     <public-top :num="4"></public-top>
-    <div class="user" @click="$router.push({name:'User'})">
+    <div class="user" @click="user">
       <div class="userWrap">
         <img src="../../assets/images/home/detail/user.png">
-        <div>
+        <div v-if="userInfo">
           Elvis
           <span>UID:(HY553202)</span>
+        </div>
+        <div v-if="!userInfo" @click.stop="$router.push('/login')">
+          未登录
         </div>
       </div>
       <img src="../../assets/images/home/arrow.png">
@@ -14,11 +17,11 @@
     <div class="userPrice">
       <div>
         人民币账户
-        <span>￥88888.00</span>
+        <span>{{userInfo?'￥88888.00':'0'}}</span>
       </div>
       <div>
         美元账户
-        <span>$888888.00</span>
+        <span>{{userInfo?'$88888.00':'0'}}</span>
       </div>
     </div>
     <ul class="userList">
@@ -33,6 +36,7 @@
   export default {
     data() {
       return {
+        userInfo:'',
         list: [
           {
             name: '充值提现',
@@ -74,6 +78,14 @@
     },
     methods: {
       detailClick(item) {
+        if(item.val=='gywm'){
+          this.$router.push('/my/gywm')
+          return false
+        }
+        if(!this.userInfo){
+          this.$router.push('/login')
+          return false
+        }
         switch (item.val) {
           case 'aq':
             this.$router.push('/security/index')
@@ -97,7 +109,17 @@
             this.$router.push('/my/number')
             break;
         }
+      },
+      user(){
+        if(this.userInfo){
+          this.$router.push({name:'User'})
+        }else{
+          this.$router.push('/login')
+        }
       }
+    },
+    created(){
+      this.userInfo = localStorage.getItem('userInfo')
     }
   }
 </script>
@@ -115,7 +137,7 @@
 
     .userWrap {
       display: flex;
-
+      width: 100%;
       img {
         width: 70px;
         height: 70px;
@@ -129,6 +151,7 @@
         flex-direction: column;
         justify-content: center;
         font-size: 16px;
+        width: 75%;
         color: #ebebeb;
 
         span {
@@ -157,11 +180,8 @@
       position: relative;
       box-sizing: border-box;
 
-      &
-      :first-child {
-
-        &
-        :before {
+      &:first-child {
+        &:before {
           content: '';
           width: 1px;
           height: 50px;
@@ -170,7 +190,6 @@
           top: calc(~ '50% - 25px');
           background: #26405e;
         }
-
       }
       span {
         font-size: 16px;
@@ -200,8 +219,7 @@
       border-right: 1px solid #26405e;
       border-bottom: 1px solid #26405e;
 
-      &
-      :last-child {
+      &:last-child {
         border-bottom: none;
       }
 

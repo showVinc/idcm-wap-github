@@ -16,9 +16,14 @@ import Account from '@/pages/my/Account'
 import User from '@/pages/my/User'
 import Notice from '@/pages/my/Notice'
 import Number from '@/pages/my/Number'
+import Addbank from '@/pages/my/Addbank'
+import Banklist from '@/pages/my/Banklist'
+import Address from '@/pages/my/Address'
+import Addlocation from '@/pages/my/Addlocation'
 
 //交易
 import History from '@/pages/business/history'
+import Details from '@/pages/business/detail'
 //新闻资讯
 import Message from '@/pages/message/message'
 import Detail from '@/pages/message/detail'
@@ -42,6 +47,7 @@ import SecurityMobile from '@/pages/security/mobile'  // 安全中心 -- 修改�
 Vue.use(Router)
 
 export default new Router({
+  mode:'history',
   routes: [
     {
       path: '/',
@@ -127,14 +133,9 @@ export default new Router({
       path: '/result',
       name: 'result',
       component: Result
-      // {
-      //   path: '/business',
-      //   name: 'Business',
-      //   component: Business
-      // },
     },
     {
-      path: '/business/history',
+      path: '/business',
       name: 'History',
       component: History
     },
@@ -146,7 +147,8 @@ export default new Router({
     {
       path: '/message/detail',
       name: 'Message/Deatil',
-      component: Detail},
+      component: Detail
+    },
     {
       path: '/my/btcrecord',
       name: 'Btcrecord',
@@ -211,6 +213,26 @@ export default new Router({
       path: '/my/number',
       name: 'Number',
       component: Number
+    } ,
+    {
+      path: '/my/addbank',
+      name: 'Addbank',
+      component: Addbank
+    },
+    {
+      path: '/my/banklist',
+      name: 'Banklist',
+      component: Banklist
+    },
+    {
+      path: '/my/address',
+      name: 'Address',
+      component: Address
+    },
+    {
+      path: '/my/location',
+      name: 'Addlocation',
+      component: Addlocation
     }
   ]
 })

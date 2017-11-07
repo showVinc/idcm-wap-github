@@ -17,7 +17,7 @@
           </span>
         </li>
       </ul>
-      <div class="remove">
+      <div class="remove" @click="remove">
         退出登录
       </div>
     </div>
@@ -28,7 +28,13 @@
     data() {
       return {}
     },
-    methods: {}
+    methods: {
+      remove(){
+        localStorage.removeItem('userInfo')
+        this.$toast('退出成功')
+        this.$router.push('/my')
+      }
+    }
   }
 </script>
 <style lang="less" type="text/less" scoped>

@@ -36,7 +36,7 @@
     }
   }
 </script>
-<style lang="less">
+<style lang="less" type="text/less">
   #app{
     min-height: 100vh;
     overflow-x: hidden;

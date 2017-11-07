@@ -6,21 +6,21 @@
         资金账号管理
       </div>
       <ul>
-        <li>
+        <li @click="$router.push({name:'Banklist'})">
           <div>
             <img src="../../assets/images/home/detail/bank.png" alt="">
             国内银行卡管理
           </div>
           <img class="arrow" src="../../assets/images/home/arrow.png">
         </li>
-        <li>
+        <li @click="$router.push({name:'Banklist'})">
           <div>
             <img src="../../assets/images/home/detail/bank.png" alt="">
             国际银行卡管理
           </div>
           <img class="arrow" src="../../assets/images/home/arrow.png">
         </li>
-        <li>
+        <li @click="$router.push({name:'Address'})">
           <div>
             <img src="../../assets/images/home/detail/btc.png" alt="">
             比特币地址管理

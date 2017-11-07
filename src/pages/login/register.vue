@@ -72,7 +72,7 @@
 
           this.$toast('注册成功')
 
-          sessionStorage.setItem('userinfo', data.useraccount)   //  存储用户信息到本地，并跳转到登录后的页面（仅用于测试，实际情况可做修改）
+          localStorage.setItem('userInfo', data.useraccount)   //  存储用户信息到本地，并跳转到登录后的页面（仅用于测试，实际情况可做修改）
 
           setTimeout(() => {
             this.$router.push({path: '/my'})
