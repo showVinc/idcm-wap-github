@@ -7,7 +7,7 @@
       <div class="input-box">
         <div class="form-item">
           <label class="form-label">所在地</label>
-          <select v-model="form.location">
+          <select v-model="form.location" class="form-select">
             <option v-for="item,i in location" :key="i"  :value="item.id">{{ item.label }}</option>
           </select>
         </div>
@@ -34,8 +34,6 @@
         <button class="btn btn-blue" type="button" @click="goNext()">下一步</button>
       </div>
     </form>
-
-
   </div>
 </template>
 
@@ -44,6 +42,7 @@
     data () {
       return {
         codeurl: require('@/assets/images/login/code.png'),   //  验证码图片地址
+        showlocation: false,  //  是否展开所在地下拉列表
         form: {
           location: 1,     //  所在地
           email: '',       //  邮箱地址

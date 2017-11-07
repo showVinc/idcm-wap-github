@@ -5,7 +5,7 @@
     <div class="p-title">修改绑定手机</div>
 
     <form class="form-type-2">
-      <div class="input-box">
+      <div class="input-box" style="margin-bottom: 10px;">
         <div class="form-item">
           <label class="form-label">原手机号</label>
           <input type="text" disabled v-model="form.oldtel">
@@ -21,10 +21,9 @@
       <div class="input-box">
         <div class="form-item">
           <label class="form-label">所在地</label>
-          <input type="text" placeholder="请选择所在地" v-model="form.location">
-       <!--   <select v-model="form.location">
+          <select v-model="form.location" class="form-select">
             <option v-for="item,i in location" :key="i"  :value="item.id">{{ item.label }}</option>
-          </select>-->
+          </select>
         </div>
 
         <div class="form-item">
@@ -43,12 +42,6 @@
         <button class="btn btn-blue" type="button" @click="subForm()">确认</button>
       </div>
     </form>
-
-   <!-- <mt-popup
-      v-model="popupVisible"
-      position="bottom">
-      ...
-    </mt-popup>-->
   </div>
 </template>
 
@@ -63,7 +56,7 @@
         form: {
           oldtel: '189****8757',   //  原手机号
           oldcode: '',  //  原手机号 验证码
-          location: '',  //  新手机号所在地
+          location: '1',  //  新手机号所在地
           newtel: '',   //  新手机号
           newcode: ''   //  新手机号验证码
         }

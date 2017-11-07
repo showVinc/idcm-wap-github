@@ -24,11 +24,12 @@
           </el-radio-group>
         </div>
 
-        <div class="form-item">
+        <div class="form-item" style="position:relative">
           <label class="form-label">证件类型</label>
-          <select v-model="form.type">
+          <select v-model="form.type" class="form-select">
             <option v-for="item,i in type_list" :key="i"  :value="item.id">{{ item.label }}</option>
           </select>
+        <!--  <span class="icon-right"></span>-->
         </div>
 
         <div class="form-item">
@@ -38,14 +39,32 @@
 
         <div class="form-item">
           <label class="form-label">证件正面</label>
-          <input type="text">
-          <button class="btn btn-blue-sm" type="button">点击上传</button>
+          <input type="text" disabled v-model="front_name">
+
+          <el-upload
+            class="upload-demo"
+            action="https://jsonplaceholder.typicode.com/posts/"
+            :show-file-list="false"
+            :on-error="uploadError"
+            :before-upload="beforeUpload"
+            :on-success="uploadSuccessFront">
+            <button class="btn btn-blue-sm" type="button">点击上传</button>
+          </el-upload>
         </div>
 
         <div class="form-item">
           <label class="form-label">证件反面</label>
-          <input type="text">
-          <button class="btn btn-blue-sm" type="button">点击上传</button>
+          <input type="text" disabled v-model="back_name">
+
+          <el-upload
+            class="upload-demo"
+            action="https://jsonplaceholder.typicode.com/posts/"
+            :show-file-list="false"
+            :on-error="uploadError"
+            :before-upload="beforeUpload"
+            :on-success="uploadSuccessBack">
+            <button class="btn btn-blue-sm" type="button">点击上传</button>
+          </el-upload>
         </div>
       </div>
 
@@ -66,17 +85,46 @@
           {label: '身份证', id: 1},
           {label: '护照', id: 2}
         ],
+        front_name: '',   //  正面照名称
+        back_name: '',    //  反面照名称
         form: {
           username: '',   //  真实姓名
           gender: 1,      //  男
-          type: '',       //  证件类型
+          type: '1',       //  证件类型
           code: '',       //  证件号码
-          front_fid: '',  //  证件正面照
-          back_fid: ''    //  证件反面照
+          front_fid: '1',  //  证件正面照
+          back_fid: '2'    //  证件反面照
         }
       }
     },
     methods: {
+      beforeUpload (file) {
+        const isJPG = file.type === 'image/jpeg';
+        const isPNG = file.type === 'image/png';
+     //   const isLt2M = file.size / 1024 / 1024 < 2;
+
+        if (!isJPG && !isPNG) {
+          this.$toast('上传头像图片只能是 JPG 或 PNG 格式!');
+        }
+       // if (!isLt2M) {
+        //  this.$message.error('上传头像图片大小不能超过 2MB!');
+      //  }
+      //  return isJPG && isLt2M;
+        return isJPG || isPNG
+      },
+      uploadError (err, file, fileList) {
+        this.$toast('上传失败')
+      },
+      uploadSuccessFront(res, files, fileLists) {
+        this.front_name = files.name
+       // this.form.front_fid = res.fid //  fid 图片唯一标识符
+        this.form.front_fid = '1'
+      },
+      uploadSuccessBack(res, files, fileLists) {
+        this.back_name = files.name
+      // this.form.back_fid = res.fid //  fid 图片唯一标识符
+        this.form.back_fid = '2'
+      },
       subForm() {
         let data = this.form
 
@@ -145,6 +193,10 @@
 </style>
 
 <style lang="less">
+  .upload-demo .el-upload {
+    width: auto;
+    height: auto;
+  }
   .page-radios {
     .el-radio__inner {
       width: 17px;
