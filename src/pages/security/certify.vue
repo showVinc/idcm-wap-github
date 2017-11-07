@@ -203,6 +203,9 @@
       height: 17px;
       border: solid 1px #3f87ba;
       background: transparent;
+      &:after {
+        background: transparent;
+      }
     }
     .el-radio__input.is-checked .el-radio__inner{
       border: solid 1px #5ba6fe;
