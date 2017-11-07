@@ -16,6 +16,10 @@ import Account from '@/pages/my/Account'
 import User from '@/pages/my/User'
 import Notice from '@/pages/my/Notice'
 import Number from '@/pages/my/Number'
+import Addbank from '@/pages/my/Addbank'
+import Banklist from '@/pages/my/Banklist'
+import Address from '@/pages/my/Address'
+import Addlocation from '@/pages/my/Addlocation'
 
 //交易
 import History from '@/pages/business/history'
@@ -35,6 +39,7 @@ import Result from '@/pages/login/result'     //  找回密码成功后的提示
 Vue.use(Router)
 
 export default new Router({
+  mode:'history',
   routes: [
     {
       path: '/',
@@ -174,6 +179,26 @@ export default new Router({
       path: '/my/number',
       name: 'Number',
       component: Number
+    } ,
+    {
+      path: '/my/addbank',
+      name: 'Addbank',
+      component: Addbank
+    },
+    {
+      path: '/my/banklist',
+      name: 'Banklist',
+      component: Banklist
+    },
+    {
+      path: '/my/address',
+      name: 'Address',
+      component: Address
+    },
+    {
+      path: '/my/location',
+      name: 'Addlocation',
+      component: Addlocation
     }
   ]
 })

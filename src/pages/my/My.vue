@@ -154,11 +154,8 @@
       position: relative;
       box-sizing: border-box;
 
-      &
-      :first-child {
-
-        &
-        :before {
+      &:first-child {
+        &:before {
           content: '';
           width: 1px;
           height: 50px;
@@ -167,7 +164,6 @@
           top: calc(~ '50% - 25px');
           background: #26405e;
         }
-
       }
       span {
         font-size: 16px;
@@ -197,8 +193,7 @@
       border-right: 1px solid #26405e;
       border-bottom: 1px solid #26405e;
 
-      &
-      :last-child {
+      &:last-child {
         border-bottom: none;
       }
 
