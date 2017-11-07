@@ -1,7 +1,7 @@
 <!--  登录  -->
 <template>
   <div class="sec-login">
-    <div class="logo">
+    <div class="logo" @click="$router.push('/')">
       <img :src="require('@/assets/images/login/logo.png')" alt="">
     </div>
 
@@ -59,10 +59,7 @@
           //  ....
 
           this.$toast('登录成功')
-
-          sessionStorage.setItem('userinfo', data.useraccount)   //  存储用户信息到本地，并跳转到登录后的页面（仅用于测试，实际情况可做修改）
-
-
+          localStorage.setItem('userInfo', data.useraccount)   //  存储用户信息到本地，并跳转到登录后的页面（仅用于测试，实际情况可做修改）
           setTimeout(() => {
             this.$router.push({path: '/my'})
           }, 2000)

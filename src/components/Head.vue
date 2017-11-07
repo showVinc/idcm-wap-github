@@ -4,10 +4,10 @@
       <li :class="{'topActive':num==1}" @click="$router.push('/')">
         <span></span>
       </li>
-      <li :class="{'topActive':num==2}">
+      <li :class="{'topActive':num==2}" @click="$router.push('/business')">
         <span></span>
       </li>
-      <li :class="{'topActive':num==3}">
+      <li :class="{'topActive':num==3}" @click="$router.push('/message')">
         <span></span>
       </li>
       <li :class="{'topActive':num==4}" @click="$router.push('/my')">

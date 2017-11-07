@@ -12,7 +12,6 @@
           <span @click="navNum = 3" :class="{'navActive':navNum==3}">历史记录</span>
         </li>
       </ul>
-
       <div class="contents1" v-if="navNum==1">
         <div class="tit">
           {{tit}}
@@ -20,12 +19,12 @@
         <div class="tab">
           <div class="button">
             <b class="lefts" @click="add1">+</b>
-            <input type="text" placeholder="价格" class="price" v-model="price">
+            <input type="number" placeholder="价格" class="price" v-model="price">
             <b class="rights" @click="jj1">-</b>
           </div>
           <div class="button">
             <b class="lefts" @click="add">+</b>
-            <input type="text" placeholder="数量" class="price" v-model="num">
+            <input type="number" placeholder="数量" class="price" v-model="num">
             <b class="rights" @click="jj">-</b>
           </div>
           <div class="button">
@@ -117,8 +116,8 @@
     data() {
       return {
         navNum:1,
-        num:1,
-        price:'10',
+        num:'',
+        price:'',
         msg:'交易中心',
         pwd:'',
         tit:'比特币买卖（BTC）',
@@ -331,6 +330,7 @@
         height: auto;
       }
     }
+
     .tab{
       display: flex;
       flex-wrap: wrap;
@@ -400,6 +400,8 @@
       ul{
         padding-left: 15px;
         background: #0e3048;
+        margin-bottom: 50px;
+
         li{
 
           border-bottom: none!important;
