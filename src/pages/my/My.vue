@@ -75,6 +75,9 @@
     methods: {
       detailClick(item) {
         switch (item.val) {
+          case 'aq':
+            this.$router.push('/security/index')
+            break;
           case 'cz':
             this.$router.push('/my/cash')
             break;
