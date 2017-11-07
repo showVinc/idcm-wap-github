@@ -18,6 +18,7 @@ import Notice from '@/pages/my/Notice'
 
 //交易
 import History from '@/pages/business/history'
+import Details from '@/pages/business/detail'
 //新闻资讯
 import Message from '@/pages/message/message'
 import Detail from '@/pages/message/detail'
@@ -71,13 +72,13 @@ export default new Router({
       name: 'Security',
       component: Security
     },
-    // {
-    //   path: '/business',
-    //   name: 'Business',
-    //   component: Business
-    // },
+     {
+      path: '/business/details',
+      name: 'Details',
+      component: Details
+    },
     {
-      path: '/business/history',
+      path: '/business',
       name: 'History',
       component: History
     },
@@ -89,7 +90,8 @@ export default new Router({
     {
       path: '/message/detail',
       name: 'Message/Deatil',
-      component: Detail},
+      component: Detail
+    },
     {
       path: '/my/btcrecord',
       name: 'Btcrecord',
