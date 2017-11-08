@@ -3,7 +3,7 @@
     <public-top :num="4"></public-top>
     <div class="user" @click="user">
       <div class="userWrap">
-        <img :src="userInfo?require('../../assets/images/home/detail/user.png'):require('../../assets/images/home/detail/add.png')">
+        <img src="../../assets/images/home/detail/add.png">
         <div v-if="userInfo">
           Elvis
           <span>UID:(HY553202)</span>
