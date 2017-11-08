@@ -14,7 +14,7 @@
         <div class="form-item">
           <label class="form-label">短信验证码</label>
           <input type="text" placeholder="请输入验证码" v-model="form.oldcode">
-          <button class="btn btn-code">点击获取</button>
+          <button class="btn btn-code" type="button">点击获取</button>
         </div>
       </div>
 
@@ -34,7 +34,7 @@
         <div class="form-item">
           <label class="form-label">短信验证码</label>
           <input type="text" placeholder="请输入验证码" v-model="form.newcode">
-          <button class="btn btn-code">点击获取</button>
+          <button class="btn btn-code" type="button">点击获取</button>
         </div>
       </div>
 

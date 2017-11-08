@@ -11,9 +11,9 @@ Btcshow.vue
       可用BTC
       <div>321.00000000</div>
     </div>
-    <div class="addBank">
+    <div class="addBank" @click="$router.push({name:'Addbank'})">
       <div>
-        <img src="../../assets/images/home/detail/add.png">
+        <img src="../../assets/images/add.png">
         添加银行卡
       </div>
       <img class="arrow" src="../../assets/images/home/arrow.png">
@@ -22,32 +22,32 @@ Btcshow.vue
       <li>
         提现金额
         <div>
-          <input type="text" placeholder="请输入提现金额">
+          <input type="text" placeholder="请输入提现金额" v-model="post.price">
         </div>
       </li>
       <li>
         手续费
         <div>
-          <input type="text" placeholder="请输入转出数量">
+          <span>0.50</span>
           BTC
         </div>
       </li>
       <li>
         实际到账
         <div>
-          <input type="text" placeholder="请输入转出数量">
+          <span>0.50</span>
           BTC
         </div>
       </li>
       <li>
         交易密码
         <div>
-          <input type="password" placeholder="请输入交易密码">
+          <input type="password" placeholder="请输入交易密码" v-model="post.psw">
         </div>
       </li>
     </ul>
     <span class="text">请按上述金额汇款，包括小数点后两位。</span>
-    <div class="btn">
+    <div class="btn" @click="sub">
       确认
     </div>
     <div class="btcText">
@@ -69,21 +69,24 @@ Btcshow.vue
     data() {
       return {
         isShow: false,
-        value: '人民币提现'
+        value: '人民币提现',
+        post:{
+          price:'',
+          psw:''
+        }
       }
     },
     methods: {
       popClick(index) {
         switch (index) {
           case 1:
-            this.value = '比特币充值'
-            this.$router.push({name: 'Security', params: {key: 2}})
+            this.$router.push({name: 'Securitybtc'})
             break;
           case 2:
             this.$router.push({name: 'Btcshow'})
             break;
           case 3:
-            this.$router.push({name: 'Security', params: {key: 0}})
+            this.$router.push({name: 'Security'})
             break;
           case 4:
             this.$router.push({name: 'Rmbshow'})
@@ -93,6 +96,19 @@ Btcshow.vue
             break;
         }
         this.isShow = false
+      },
+      sub(){
+        let msg = ''
+        if(!this.post.price){
+          msg = '请输入金额'
+        }else if(!this.post.psw){
+          msg = '请输入交易密码'
+        }
+        if(msg){
+          this.$toast(msg)
+          return false
+        }
+        this.$toast('提现成功')
       }
     },
   }
@@ -145,7 +161,6 @@ Btcshow.vue
       padding-left: 15px;
       background: #0e3048;
       position: relative;
-      font-size: 14px;
       div {
         display: flex;
         align-items: center;
@@ -180,6 +195,10 @@ Btcshow.vue
           align-items: center;
           padding-right: 15px;
           box-sizing: border-box;
+          span{
+            font-size: 14px;
+            color: #5ba6fe;
+          }
           input {
             background: none;
             font-size: 14px;

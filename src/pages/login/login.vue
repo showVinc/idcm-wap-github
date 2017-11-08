@@ -1,7 +1,7 @@
 <!--  登录  -->
 <template>
   <div class="sec-login">
-    <div class="logo" @click="$router.push('/')">
+    <div class="logo" @click="$router.push('/my')">
       <img :src="require('@/assets/images/login/logo.png')" alt="">
     </div>
 

@@ -14,7 +14,7 @@
         <div class="form-item">
           <label class="form-label">邮箱验证码</label>
           <input type="text" placeholder="请输入邮箱验证码" v-model="form.code">
-          <button class="btn btn-code">点击获取</button>
+          <button class="btn btn-code" type="button">点击获取</button>
         </div>
       </div>
 

@@ -41,6 +41,9 @@
           </div>
         </li>
       </ul>
+      <div class="btn" @click="sub">
+        保存
+      </div>
     </div>
   </div>
 </template>
@@ -59,13 +62,16 @@
         const isJPG = file.type === 'image/jpeg';
         const isLt2M = file.size / 1024 / 1024 < 2;
 
-        if (!isJPG) {
-          this.$message.error('上传头像图片只能是 JPG 格式!');
-        }
+//        if (!isJPG) {
+//          this.$message.error('上传头像图片只能是 JPG 格式!');
+//        }
         if (!isLt2M) {
           this.$message.error('上传头像图片大小不能超过 2MB!');
         }
         return isJPG && isLt2M;
+      },
+      sub(){
+        this.$toast('保存成功')
       }
     }
   }
@@ -133,6 +139,19 @@
           border: none;
         }
       }
+    }
+    .btn {
+      width: calc(~'100% - 30px');
+      margin: 50px auto;
+      box-sizing: border-box;
+      font-size: 16px;
+      color: #ebebeb;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #356092;
+      border-radius: 3px;
     }
   }
 </style>

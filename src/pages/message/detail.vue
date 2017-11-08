@@ -3,7 +3,7 @@
     <public-top :num="3"></public-top>
     <dl v-for="i in data">
       <dd>
-        <h4>{{i.content}}</h4>
+        <div>{{i.content}}</div>
         <p>
           <span>{{i.time}}</span>
           <span>{{i.title}}</span>
@@ -70,8 +70,7 @@
         dd{
           padding-right: 10px;
           padding-left: 3px;
-          width: 240px;
-          h4{
+          div{
             color: #ebebeb;
             font-size: 16px;
           }

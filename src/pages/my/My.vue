@@ -3,7 +3,7 @@
     <public-top :num="4"></public-top>
     <div class="user" @click="user">
       <div class="userWrap">
-        <img src="../../assets/images/home/detail/user.png">
+        <img :src="userInfo?require('../../assets/images/home/detail/user.png'):require('../../assets/images/home/detail/add.png')">
         <div v-if="userInfo">
           Elvis
           <span>UID:(HY553202)</span>
@@ -45,7 +45,7 @@
           },
           {
             name: '账户总览',
-            img: require('../../assets/images/home/zhanghao.png'),
+            img: require('../../assets/images/home/zhanghu.png'),
             val: 'zhanghu'
           },
           {
@@ -55,7 +55,7 @@
           },
           {
             name: '账号管理',
-            img: require('../../assets/images/home/zhanghu.png'),
+            img: require('../../assets/images/home/zhanghao.png'),
             val: 'zhanghao'
           },
           {

@@ -7,7 +7,7 @@
     <div class="content">
       <ul class="uls">
         <li>
-          <span @click="navNum = 1" :class="{'navActive':navNum==1}">买入、卖出</span>
+          <span @click="navNum = 1" :class="{'navActive':navNum==1}">买入/卖出</span>
           <span @click="navNum = 2" :class="{'navActive':navNum==2}">当前委托</span>
           <span @click="navNum = 3" :class="{'navActive':navNum==3}">历史记录</span>
         </li>
@@ -41,12 +41,12 @@
           </div>
         </div>
 
-        <div class="btcList">
+        <div class="btcList" @click="$router.push({name:'Details'})">
           <div v-for="item in list" class="ii">
             <div class="listImg">
               <img src="../../assets/images/home/BTC.png">
             </div>
-            <div class="listMain">
+            <div class="listMain" >
               <div class="listTit">
                   BTC/USD:
                   <span :class="{'isRose':item.isrose==2}">
@@ -88,11 +88,11 @@
           <span>委托价/成交数</span>
           <span>操作</span>
         </li>
-        <li v-for="i in data">
+        <li v-for="i,index in data">
           <span>{{i.time}}</span>
           <span :data="i.number"  :class="{'red':i.number==2}" class="spans">{{i.type}}</span>
           <span>{{i.num}}</span>
-          <span class="clear" @click="remove($event)"><b>撤销</b></span>
+          <span class="clear" @click="remove(index)"><b>撤销</b></span>
         </li>
       </ul>
 
@@ -242,8 +242,8 @@
       }
     },
       methods:{
-        remove(e){
-          e.currentTarget.parentNode.parentNode.removeChild(e.currentTarget.parentNode)
+        remove(index){
+          this.data.splice(index,1)
         },
         add(){
             this.num++;
@@ -468,6 +468,9 @@
         /*background: #0e3048;*/
         font-size: 12px;
         padding:2px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         &:nth-child(2){
           line-height: 40px;
         }

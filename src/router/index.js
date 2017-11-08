@@ -9,6 +9,7 @@ import Rmbshow from '@/pages/my/Rmbshow'
 import Gywm from '@/pages/my/Gywm'
 import Gywmdetail from '@/pages/my/Gywmdetail'
 import Security from '@/pages/my/Security'
+import Securitybtc from '@/pages/my/Securitybtc'
 import Btcrecord from '@/pages/my/Btcrecord'
 import Setting from '@/pages/my/Setting'
 import Opinion from '@/pages/my/Opinion'
@@ -95,6 +96,11 @@ export default new Router({
       component: Security
     },
     {
+      path: '/my/securitybtc',
+      name: 'Securitybtc',
+      component: Securitybtc
+    },
+    {
       path: '/login',
       name: 'login',
       component: Login
@@ -138,6 +144,11 @@ export default new Router({
       path: '/business',
       name: 'History',
       component: History
+    },
+    {
+      path: '/business/detail',
+      name: 'Details',
+      component: Details
     },
     {
       path: '/message',

@@ -8,7 +8,7 @@ Btcshow.vue
       </div>
     </div>
     <div class="rmbPrice">
-      可用CMY
+      可用CNY
       <div>321.00000000</div>
     </div>
     <ul>
@@ -54,7 +54,7 @@ Btcshow.vue
       popClick(index) {
         switch (index) {
           case 1:
-            this.value = '比特币充值'
+            this.$router.push({name: 'Securitybtc'})
             break;
           case 2:
             this.$router.push({name: 'Btcshow'})

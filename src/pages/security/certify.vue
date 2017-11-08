@@ -27,9 +27,9 @@
         <div class="form-item" style="position:relative">
           <label class="form-label">证件类型</label>
           <select v-model="form.type" class="form-select">
-            <option v-for="item,i in type_list" :key="i"  :value="item.id">{{ item.label }}</option>
+            <option v-for="item,i in type_list" :key="i" :value="item.id">{{ item.label }}</option>
           </select>
-        <!--  <span class="icon-right"></span>-->
+          <!--  <span class="icon-right"></span>-->
         </div>
 
         <div class="form-item">
@@ -68,7 +68,7 @@
         </div>
       </div>
 
-      <div class="tip" style="padding-left: 15px;">仅支持jpg、jpeg、bmo的图面格式。图片大小不超过2M</div>
+      <div class="tip" style="padding-left: 15px;">仅支持jpg、jpeg、bmp的图片格式。图片大小不超过2M</div>
 
       <div class="btns">
         <button class="btn btn-blue" type="button" @click="subForm()">确认</button>
@@ -79,7 +79,7 @@
 
 <script>
   export default {
-    data () {
+    data() {
       return {
         type_list: [  //  证件类型列表
           {label: '身份证', id: 1},
@@ -98,54 +98,54 @@
       }
     },
     methods: {
-      beforeUpload (file) {
+      beforeUpload(file) {
         const isJPG = file.type === 'image/jpeg';
         const isPNG = file.type === 'image/png';
-     //   const isLt2M = file.size / 1024 / 1024 < 2;
+        //   const isLt2M = file.size / 1024 / 1024 < 2;
 
         if (!isJPG && !isPNG) {
           this.$toast('上传头像图片只能是 JPG 或 PNG 格式!');
         }
-       // if (!isLt2M) {
+        // if (!isLt2M) {
         //  this.$message.error('上传头像图片大小不能超过 2MB!');
-      //  }
-      //  return isJPG && isLt2M;
+        //  }
+        //  return isJPG && isLt2M;
         return isJPG || isPNG
       },
-      uploadError (err, file, fileList) {
+      uploadError(err, file, fileList) {
         this.$toast('上传失败')
       },
       uploadSuccessFront(res, files, fileLists) {
         this.front_name = files.name
-       // this.form.front_fid = res.fid //  fid 图片唯一标识符
+        // this.form.front_fid = res.fid //  fid 图片唯一标识符
         this.form.front_fid = '1'
       },
       uploadSuccessBack(res, files, fileLists) {
         this.back_name = files.name
-      // this.form.back_fid = res.fid //  fid 图片唯一标识符
+        // this.form.back_fid = res.fid //  fid 图片唯一标识符
         this.form.back_fid = '2'
       },
       subForm() {
         let data = this.form
 
         let msg = ''
-        if(!data.username) {
+        if (!data.username) {
           msg = '请输入真实姓名'
-        }else if(!data.gender) {
+        } else if (!data.gender) {
           msg = '请选择性别'
-        }else if(!data.type) {
+        } else if (!data.type) {
           msg = '请选择证件类型'
-        }else if(!data.code) {
+        } else if (!data.code) {
           msg = '请输入证件号码'
-        }else if(!data.front_fid) {
+        } else if (!data.front_fid) {
           msg = '请上传证件照正面'
-        }else if(!data.back_fid) {
+        } else if (!data.back_fid) {
           msg = '请上传证件照反面'
         }
 
-        if(msg) {
+        if (msg) {
           this.$toast(msg)
-        }else {
+        } else {
           //  提交表单
           //  to do
           //  ....
@@ -162,20 +162,23 @@
 </script>
 
 
-<style lang="less" scoped>
+<style lang="less" scoped type="text/less">
   .input-box {
     margin-bottom: 10px;
   }
+
   .p-title {
     line-height: 30px;
     padding-top: 10px;
     padding-bottom: 13px;
   }
+
   .tip {
     font-size: 12px;
     line-height: 22px;
     color: #516d8e;
   }
+
   .icon-tip {
     width: 16px;
     height: 16px;
@@ -186,18 +189,24 @@
     line-height: 16px;
     display: inline-block;
     margin-right: 10px;
+
     &:after {
       content: '!';
     }
+
   }
 </style>
 
-<style lang="less">
+<style lang="less" type="text/less">
   .upload-demo .el-upload {
     width: auto;
     height: auto;
   }
+
   .page-radios {
+    .el-radio__label{
+      color: #ebebeb;
+    }
     .el-radio__inner {
       width: 17px;
       height: 17px;
@@ -207,7 +216,7 @@
         background: transparent;
       }
     }
-    .el-radio__input.is-checked .el-radio__inner{
+    .el-radio__input.is-checked .el-radio__inner {
       border: solid 1px #5ba6fe;
       background: transparent;
       &:after {

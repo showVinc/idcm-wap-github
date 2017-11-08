@@ -1,3 +1,4 @@
+Btcshow.vue
 <template>
   <div class="cashWrap">
     <public-top :num="4"></public-top>
@@ -7,51 +8,29 @@
       </div>
     </div>
     <ul>
-      <li>
+      <li class="rmbPrice">
         可用BTC
         <div>321.00000000</div>
       </li>
       <li>
-        提现地址
+        充值金额
         <div>
-          <input type="text" placeholder="请输入钱包地址" v-model="post.address">
-        </div>
-      </li>
-      <li>
-        提现数量
-        <div>
-          <input type="text" placeholder="请输入转出数量" v-model="post.number">
-        </div>
-      </li>
-      <li>
-        手续费
-        <div>
-          <span>0.50</span>
-          BTC
-        </div>
-      </li>
-      <li>
-        实际到账
-        <div>
-          <span>0.50</span>
-          BTC
-        </div>
-      </li>
-      <li>
-        交易密码
-        <div>
-          <input type="password" placeholder="请输入交易密码" v-model="post.psw">
+          <input type="text" placeholder="请输入提现金额" v-model="price">
         </div>
       </li>
     </ul>
+    <div class="phone">
+      <img src="../../assets/images/home/demo.jpg">
+      <p>手机扫描二维码即可充值</p>
+    </div>
     <div class="btn" @click="sub">
       确认
     </div>
     <div class="btcText">
       <p>充值说明：</p>
-      <p>1，为了安全，转出比特币是由人工出力，您提交后，我们会在短时间内为您处理。</p>
-      <p>2，为了加快转币的速度，我们会为每次转币支付网络费，但由于比特币网络的不确定性，部分转币任然较慢，请耐心等待。</p>
-      <p>3，转出数额不能小于0.01BTC。</p>
+      <p>
+        您的比特币汇入上述地址后，需要整个比特币网络节点确认，为了快速到账，您可以向比特币网络支付少量的手续费。到账时间一般是10分钟~60分钟之间。最小充值金额是：0.0001.您的比特币地址不会经常改变，可以重复充值；如有更改，我们会尽量通过网站公告或消息通知您。
+      </p>
     </div>
     <mt-popup v-model="isShow" position="top" class="mint-popup-2 upPop" :modal="false">
       <p @click="popClick(1)">比特币充值 <img v-if="value=='比特币充值'" src="../../assets/images/home/success.png"></p>
@@ -66,52 +45,54 @@
   export default {
     data() {
       return {
-        isShow:false,
-        value: '比特币提现',
-        post:{
-          address:'',
-          psw:'',
-          number:''
-        }
+        isShow: false,
+        value: '比特币充值',
+        price: ''
       }
     },
     methods: {
-      popClick(index){
-        switch (index){
+      popClick(index) {
+        switch (index) {
           case 1:
-            this.$router.push({name: 'Securitybtc'})
+            this.value = '比特币充值'
             break;
           case 2:
-            this.$router.push({name:'Btcshow'})
+            this.$router.push({name: 'Btcshow'})
             break;
           case 3:
             this.$router.push({name: 'Security'})
             break;
           case 4:
-            this.$router.push({name:'Rmbshow'})
+            this.$router.push({name: 'Rmbshow'})
             break;
           case 5:
-            this.$router.push({name:'Btcrecord'})
+            this.$router.push({name: 'Btcrecord'})
             break;
         }
         this.isShow = false
       },
-      sub(){
-        let msg = ''
-        if(!this.post.address){
-          msg = '请输入钱包地址'
-        }else if(!this.post.number){
-          msg = '请输入转出数量'
-        }else if(!this.post.psw){
-          msg = '请输入交易密码'
-        }
-        if(msg){
-          this.$toast(msg)
+      sub() {
+        if (!this.price) {
+          this.$toast('请输入充值金额')
           return false
+        } else {
+          this.$toast('充值成功')
         }
-        this.$toast('提现成功')
       }
     },
+    created() {
+      switch (this.$route.params.key) {
+        case 0:
+          this.value = '人民币充值'
+          break;
+        case 1:
+          this.value = '美元充值'
+          break;
+        case 2:
+          this.value = '比特币充值'
+          break;
+      }
+    }
   }
 </script>
 <style lang="less" type="text/less" scoped>
@@ -124,10 +105,10 @@
     box-sizing: border-box;
     font-size: 20px;
     color: #ebebeb;
-    .down{
+    .down {
       display: flex;
       align-items: center;
-      img{
+      img {
         margin-left: 10px;
         width: 9px;
         height: 5px;
@@ -136,6 +117,45 @@
   }
 
   .cashWrap {
+    .rmbPrice {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #ebebeb;
+      font-size: 14px;
+      border-bottom: 1px solid #233b56;
+      background: #0e3048;
+      div {
+        width: calc(~ '100% - 90px');
+      }
+    }
+    .addBank {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #ebebeb;
+      font-size: 14px;
+      border-bottom: 1px solid #233b56;
+      padding-left: 15px;
+      background: #0e3048;
+      position: relative;
+      div {
+        display: flex;
+        align-items: center;
+        img {
+          width: 16px;
+          height: 16px;
+          margin-right: 10px;
+        }
+      }
+      .arrow {
+        width: 6px;
+        height: 11px;
+        margin-right: 15px;
+      }
+    }
     ul {
       padding-left: 15px;
       background: #0e3048;
@@ -146,20 +166,15 @@
         justify-content: space-between;
         color: #ebebeb;
         font-size: 14px;
-        border-bottom: 1px solid #233b56;
-        div{
-          width: calc(~'100% - 90px');
+        div {
+          width: calc(~ '100% - 90px');
           height: 100%;
           display: flex;
           justify-content: space-between;
           align-items: center;
           padding-right: 15px;
           box-sizing: border-box;
-          span{
-            font-size: 14px;
-            color: #5ba6fe;
-          }
-          input{
+          input {
             background: none;
             font-size: 14px;
             height: 100%;
@@ -169,10 +184,32 @@
       }
     }
   }
+  .phone{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #516d8e;
+    margin-top: 50px;
+    img{
+      width: 170px;
+      height: 170px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .text {
+    font-size: 12px;
+    color: #516d81;
+    width: 100%;
+    padding: 15px;
+    display: block;
+  }
 
   .btn {
-    width: calc(~'100% - 30px');
-    margin: 15px auto;
+    width: calc(~ '100% - 30px');
+    margin: 50px auto;
     box-sizing: border-box;
     font-size: 16px;
     color: #ebebeb;
@@ -183,18 +220,19 @@
     background: #356092;
     border-radius: 3px;
   }
-  .btcText{
+
+  .btcText {
     width: 100%;
     padding: 15px;
     box-sizing: border-box;
     font-size: 12px;
     color: #516d8e;
-    p{
+    p {
       line-height: 20px;
     }
   }
 </style>
-<style lang="less">
+<style lang="less" type="text/less">
   .cashWrap {
     .el-input__inner {
       background: none;
@@ -209,26 +247,28 @@
   .el-select-dropdown__item.selected.hover {
     background-color: #0a2638;
   }
-
   .el-select-dropdown__item.selected {
     background-color: #0a2638;
   }
-  .upPop{
+  ::-webkit-input-placeholder {
+    font-size: 20px;
+  }
+  .upPop {
     width: 100%;
     background: #0d2638;
     font-size: 20px;
     color: #ebebeb;
-    top:100px;
-    height: calc(~'100vh - 100px');
+    top: 100px;
+    height: calc(~ '100vh - 100px');
     padding-left: 15px;
     box-sizing: border-box;
-    p{
+    p {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 15px 15px 0;
       border-top: 1px solid #233b56;
-      img{
+      img {
         width: 16px;
         height: 11.5px;
       }

@@ -78,8 +78,12 @@
         }
       },
       security(item,index){
-        let res = {key:index}
-        this.$router.push({name:'Security',params:res})
+        let res = index
+        if(index==0||index==1){
+          this.$router.push({name:'Security',params:res})
+        }else{
+          this.$router.push({name:'Securitybtc',params:res})
+        }
       }
     }
   }

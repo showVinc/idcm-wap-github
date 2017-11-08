@@ -37,7 +37,7 @@
               title: '系统公告',
               send_time: '2017-02-13',
               content: '12312312312312',
-              is_read:0
+              is_read:1
             }
           ]
         }

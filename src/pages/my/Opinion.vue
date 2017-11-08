@@ -5,11 +5,11 @@
       <div class="settingTit">
         意见反馈
       </div>
-      <textarea rows="18" style="resize:none" placeholder="请输入您的意见与反馈...">
+      <textarea rows="18" style="resize:none" placeholder="请输入您的意见与反馈..." v-model="text">
       </textarea>
       <div class="tel">
           联系电话
-        <input type="text" placeholder="选填，便于我们联系你">
+        <input type="text" placeholder="选填，便于我们联系你" v-model="tel">
       </div>
       <div class="remove" @click="sub">
         提交

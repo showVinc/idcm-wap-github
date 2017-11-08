@@ -4,7 +4,7 @@
     <div class="btc">
       <div class="btcTit">
         BTC
-        <span>$7000.00</span>
+        <span>$7000.00 <img src="../assets/images/home/arrowUp.png"></span>
       </div>
       <div class="btcTime">
         <div class="homeImg">
@@ -13,7 +13,7 @@
       </div>
     </div>
     <ul class="btcList">
-      <li v-for="item in list">
+      <li v-for="item in list" @click="$router.push({name:'Details'})">
         <div class="listImg">
           <img src="../assets/images/home/BTC.png">
         </div>
@@ -51,7 +51,7 @@
             price_h: '$6805.00',
             price_l: '$6802.00',
             number: '1231232',
-            rose: '+5.86%',
+            rose: '-5.86%',
             isrose: 2
           }
         ]
@@ -73,6 +73,10 @@
       span {
         font-size: 14px;
         color: #7aed5a;
+        img{
+          width: 10px;
+          height: 13px;
+        }
       }
     }
     .btcTime {

@@ -26,14 +26,14 @@
       <li>
         手续费
         <div>
-          <input type="text" placeholder="请输入转出数量">
+          <span>0.50</span>
           BTC
         </div>
       </li>
       <li>
         实际到账
         <div>
-          <input type="text" placeholder="请输入转出数量">
+          <span>0.50</span>
           BTC
         </div>
       </li>
@@ -74,20 +74,19 @@
       popClick(index) {
         switch (index) {
           case 1:
-            this.value = '比特币充值'
-            this.$router.push({name: 'Security', params: {key: 2}})
+            this.$router.push({name: 'Securitybtc'})
             break;
           case 2:
             this.$router.push({name: 'Btcshow'})
             break;
           case 3:
-            this.$router.push({name: 'Security', params: {key: 0}})
+            this.$router.push({name: 'Security'})
             break;
           case 4:
             this.$router.push({name: 'Rmbshow'})
             break;
           case 5:
-            this.$router.push({name:'Btcrecord'})
+            this.$router.push({name: 'Btcrecord'})
             break;
         }
         this.isShow = false
@@ -105,54 +104,51 @@
     box-sizing: border-box;
     font-size: 20px;
     color: #ebebeb;
-
-  .down {
-    display: flex;
-    align-items: center;
-
-  img {
-    margin-left: 10px;
-    width: 9px;
-    height: 5px;
-  }
-
-  }
+    .down {
+      display: flex;
+      align-items: center;
+      img {
+        margin-left: 10px;
+        width: 9px;
+        height: 5px;
+      }
+    }
   }
 
   .cashWrap {
+    ul {
+      padding-left: 15px;
+      background: #0e3048;
+      li {
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #ebebeb;
+        font-size: 14px;
+        border-bottom: 1px solid #233b56;
+        div {
+          width: calc(~ '100% - 90px');
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-right: 15px;
+          box-sizing: border-box;
+          span{
+            font-size: 14px;
+            color: #5ba6fe;
+          }
+          input {
+            background: none;
+            font-size: 14px;
+            height: 100%;
+            color: #ebebeb;
+          }
 
-  ul {
-    padding-left: 15px;
-    background: #0e3048;
-
-  li {
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #ebebeb;
-    font-size: 14px;
-    border-bottom: 1px solid #233b56;
-
-  div {
-    width: calc(~ '100% - 90px');
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 15px;
-    box-sizing: border-box;
-
-  input {
-    background: none;
-    font-size: 14px;
-    height: 100%;
-    color: #ebebeb;
-  }
-
-  }
-  }
-  }
+        }
+      }
+    }
   }
 
   .btn {
@@ -174,9 +170,9 @@
     font-size: 12px;
     color: #516d8e;
 
-  p {
-    line-height: 20px;
-  }
+    p {
+      line-height: 20px;
+    }
 
   }
 </style>
